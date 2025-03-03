@@ -69,7 +69,30 @@ function addInventoryItem(productName) {
     inventoryList.appendChild(inventoryItem); // appending inventory item to inventory list
 }   
 
+// Task 4: Demonstrated Event Bubbling in Customer Section
 
+const customerSection = document.getElementById("customerSection"); // selecting customer section
+
+customerSection.addEventListener("click", function(event) { // adding event listener to customer section
+    console.log("this is the customer section"); // logging message for customer section
+});
+
+const customers = ["customer 1", "customer 2", "customer 3"]; // creating array of customers
+
+// Looping through the customers array
+customers.forEach(customer => { // looping through customers array
+    const customerCard = document.createElement("div"); // creating div for customer
+    customerCard.classList.add("customer-card"); // setting class for customer card
+    customerCard.innerText = customer; // setting text content for customer card
+    
+// Adding event listener to the customer card
+    customerCard.addEventListener("click", function(event) { // adding event listener to customer div
+        console.log(`this is ${customer}`); // logging message for customer
+        event.stopPropagation(); // stopping event propagation
+    });
+
+    customerSection.appendChild(customerCard); // appending customer div to customer section
+});
 
 
 
