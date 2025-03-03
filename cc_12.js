@@ -49,6 +49,26 @@ metricCardsArray.forEach(card => { // looping through metric cards array
     card.style.backgroundColor = "royalblue"; // setting background color for each card
 });
 
+// Task 3: Implemented Dynamic Inventory List
+
+// Adding Inventory Items
+function addInventoryItem(productName) {
+    let inventoryList = document.getElementById("inventoryList"); // Fix ID selection
+
+    // Selecting the inventory list
+    let inventoryItem = document.createElement("li"); // creating list item for inventory
+    inventoryItem.setAttribute("class", "inventory-item"); // setting class for inventory item
+    inventoryItem.innerHTML = productName; // setting text content for inventory item
+
+    // Adding the remove functionality
+    inventoryItem.addEventListener("click", function() { // adding event listener to inventory item
+        inventoryList.removeChild(inventoryItem); // setting text decoration for inventory item
+        console.log(`${productName} removed from inventory`); // logging message for removed item
+    });
+
+    inventoryList.appendChild(inventoryItem); // appending inventory item to inventory list
+}   
+
 
 
 
