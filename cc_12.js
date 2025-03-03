@@ -49,50 +49,7 @@ metricCardsArray.forEach(card => { // looping through metric cards array
     card.style.backgroundColor = "royalblue"; // setting background color for each card
 });
 
-// Task 3: Implemented Dynamic Inventory List
 
-// Adding Inventory Items
-function addInventoryItem(productName) {
-    let inventoryList = document.getElementById("inventoryList"); // Fix ID selection
-
-    // Selecting the inventory list
-    let inventoryItem = document.createElement("li"); // creating list item for inventory
-    inventoryItem.setAttribute("class", "inventory-item"); // setting class for inventory item
-    inventoryItem.innerHTML = productName; // setting text content for inventory item
-
-    // Adding the remove functionality
-    inventoryItem.addEventListener("click", function() { // adding event listener to inventory item
-        inventoryList.removeChild(inventoryItem); // setting text decoration for inventory item
-        console.log(`${productName} removed from inventory`); // logging message for removed item
-    });
-
-    inventoryList.appendChild(inventoryItem); // appending inventory item to inventory list
-}   
-
-// Task 4: Demonstrated Event Bubbling in Customer Section
-
-const customerSection = document.getElementById("customerSection"); // selecting customer section
-
-customerSection.addEventListener("click", function(event) { // adding event listener to customer section
-    console.log("this is the customer section"); // logging message for customer section
-});
-
-const customers = ["customer 1", "customer 2", "customer 3"]; // creating array of customers
-
-// Looping through the customers array
-customers.forEach(customer => { // looping through customers array
-    const customerCard = document.createElement("div"); // creating div for customer
-    customerCard.classList.add("customer-card"); // setting class for customer card
-    customerCard.innerText = customer; // setting text content for customer card
-    
-// Adding event listener to the customer card
-    customerCard.addEventListener("click", function(event) { // adding event listener to customer div
-        console.log(`this is ${customer}`); // logging message for customer
-        event.stopPropagation(); // stopping event propagation
-    });
-
-    customerSection.appendChild(customerCard); // appending customer div to customer section
-});
 
 
 
